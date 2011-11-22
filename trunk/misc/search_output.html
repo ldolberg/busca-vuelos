@@ -1,0 +1,1522 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lt IE 7 ]><html xmlns="http://www.w3.org/1999/xhtml" class="ie6" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 7 ]><html xmlns="http://www.w3.org/1999/xhtml" class="ie7" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if IE 8 ]><html xmlns="http://www.w3.org/1999/xhtml" class="ie8" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"> <!--<![endif]-->
+<head id="FlightsResult"><link rel='stylesheet' href='http://ar.staticontent.com/css-versioned/17.11/despegar/pkg/common1024Center.css' /><title>
+	Despegar.com - Resultados de Vuelos
+</title>
+    
+    <link rel="stylesheet" type="text/css" href=http://ar.staticontent.com/css-versioned/17.11/despegar/pkg/autocompleteAndCalendar.css />
+    <link rel="stylesheet" type="text/css" href=http://ar.staticontent.com/css-versioned/17.11/despegar/pkg/flightResults.css />
+    <link rel="stylesheet" type="text/css" href=http://ar.staticontent.com/css-versioned/17.11/despegar/pkg/flightResults-AR.css />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <script type="text/javascript" src="http://ar.staticontent.com/js-versioned/17.11/custom/jquery-1.2.6.min.js"></script>
+    <!--script type="text/javascript" src="/js/custom/jquery-1.4.2.min.js" charset="utf-8"></script-->    
+    <script src="http://ar.staticontent.com/js-versioned/17.11/FrameworkJS/base.js"></script>    
+    <script src="http://ar.staticontent.com/js-versioned/17.11/FrameworkJS/pkg/Common.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ar.staticontent.com/js-versioned/17.11/FrameworkJS/pkg/FlightsCommonResults.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="http://ar.staticontent.com/js-versioned/17.11/FrameworkJS/pkg/omniture.js"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' /><script type='text/javascript' src='/js-versioned/17.11/FrameworkJS/pkg/Movil.js'></script><script type='text/javascript'>$(document).ready(function(){var Movil = new Despegar.Movil.Funciones();Movil.insertCssMovil('/css-versioned/17.11/despegar/pkg/flightResultsMovil.css');});</script><!-- WEBSERVER: VMWS-VUELOS09 --><!-- UnitOfWork: SITE-VMWS-VUELOS09-z3imzs --></head>
+    
+<body id="pagebody" class="flights results despegar clustered">
+<div class="header">
+    <div class="headerContent">
+	    <div class="logo">
+            <a target="_blank" href="http://www.despegar.com.ar/">
+	            <span class="mainSprite brandDespegarLarge brandLogo"></span>
+	        </a>
+		    <span class="subtitle clearBox">La agencia de viajes Nº 1 en <a id="bestPrice">precio</a> y <a id="bestService">servicio</a></span>
+	    </div>
+	    <div id="bestPriceIcon" class="mejorPrecio mainSprite headerMejorPrecioSpanish"></div>	
+	    <div class="middleInfo">
+	        <input name="_600d578eae37ba$telephoneCount" type="hidden" id="_600d578eae37ba_telephoneCount" class="telephoneCount" value="1" />
+	        <div class="telephones">
+	            <span class="telIconHead mainSprite littleTelephone"></span>
+	            <span class="despegarTv">Tele ventas:</span>	            
+	            <select class="countries">
+                    
+                            <option class="countryTel">Buenos Aires</option>
+                        
+                </select>
+                
+	                    <span class="telephone" style="display:none;">0810-777-1010</span>
+	                
+                <span class="mainSprite littleFlagArgentina littleCountryFlag"></span>
+	            <div class="clearBox"></div>
+	            <script type="text/javascript">
+	                $(document).ready(function() {
+	                    if ($('.telephoneCount:eq(0)').val() == 0) {
+	                        $('.telephones').css('width', '300px').children().hide();
+	                        $('.contactLink:eq(0)').css({ 'visibility': 'hidden' });
+	                    } else {
+	                        $('.telephone:eq(0)').show();
+	                    }
+	                    $('.countries').change(function() {
+	                        $('.telephone').hide();
+	                        $('.telephone:eq(' + $('.countryTel').index($('.countryTel:selected')) + ')').show('slow');
+	                    });
+
+	                    $('#BestPriceWarPop').find(".contenidoDelPopUp").click(changePriceIndex);
+	                    $('#BestServicePop').find(".contenidoDelPopUp").click(changeServiceIndex);
+
+	                    $('#bestPrice').click(function() {
+	                        $('#BestPriceWarPop').css({
+	                            'top': ($(this).offset().top + 12),
+	                            'left': ($(this).offset().left - 15)
+	                        });
+	                        (($.browser.msie && ($.browser.version < '8')) ? $('#BestPriceWarPop').show() : $('#BestPriceWarPop').fadeIn());
+	                        changePriceIndex();
+	                    });
+	                    $('#bestService').click(function() {
+	                        $('#BestServicePop').css({
+	                            'top': ($(this).offset().top + 12),
+	                            'left': ($(this).offset().left - 15)
+	                        });
+	                        (($.browser.msie && ($.browser.version < '8')) ? $('#BestServicePop').show() : $('#BestServicePop').fadeIn());
+	                        changeServiceIndex();
+	                    });
+	                    $('#bestPriceIcon').click(function() {
+	                        if (!$(this).hasClass("noPopUp")) {
+	                            $('#BestPriceWarPop').css({
+	                                'top': ($(this).offset().top + $(this).height()),
+	                                'left': ($(this).offset().left - $('#BestPriceWarPop').width() + $(this).width() - 15)
+	                            });
+	                            (($.browser.msie && ($.browser.version < '8')) ? $('#BestPriceWarPop').show() : $('#BestPriceWarPop').fadeIn());
+	                            changePriceIndex();
+	                        }
+	                    });
+
+	                    function changeServiceIndex() {
+	                        var zindex = $('#BestServicePop').css("z-index");
+	                        $('.popUp:visible').each(function() {
+	                            if (($(this).attr("id") != 'BestServicePop') && ($(this).css("z-index") >= zindex)) {
+	                                $('#BestServicePop').css("z-index", (parseInt($(this).css("z-index")) + 1));
+	                            }
+	                        });
+	                    }
+	                    function changePriceIndex() {
+	                        var zindex = $('#BestPriceWarPop').css("z-index");
+	                        $('.popUp:visible').each(function() {
+	                            if (($(this).attr("id") != 'BestPriceWarPop') && ($(this).css("z-index") >= zindex)) {
+	                                $('#BestPriceWarPop').css("z-index", (parseInt($(this).css("z-index")) + 1));
+	                            }
+	                        });
+	                    }
+	                });
+                </script>
+	        </div>
+	        <div class="contactLink"><a href="http://www.despegar.com.ar/Contactenos">Centro de Atención al Cliente</a></div>
+	        <div class="links">
+		        <span id="homeLinkSpan"><a class="link homeLink" href="http://www.despegar.com.ar/">Inicio</a>|</span>
+    					<a class="link flightsLink" href="http://www.despegar.com.ar/Search/Flights/AdvancedSearch">Vuelos</a>|
+				        <a class="link hotelsLink" href="http://www.despegar.com.ar/search/Hotels/">Hoteles</a>|
+				        <a class="link packagesLink" href="http://www.despegar.com.ar/?tab=paq">Paquetes</a>|
+				        <a class="link carsLink" href="http://www.despegar.com.ar/paginas/autos/busquedaautos.asp?">Autos</a>
+		        <span class="leftBorder"></span>
+		        <span class="rightBorder"></span>
+	        </div>
+	        <div class="clearBox"></div>
+	    </div>
+	    <div class="clearBox"></div>   		    			    
+	</div>
+	<div class="colorBlock clearBox"></div>
+</div>
+
+    <script type="text/javascript">
+        
+        /*Omniture: recolección de datos*/
+        var omnitureDataCollector = new Common.OmnitureDataCollector();
+        //var diaSemana = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];	
+        /*********** Settting page data *************/
+
+        omnitureDataCollector.setPageName({ "flow": "flights", "section": "search", "page": "results" });
+        omnitureDataCollector.setType("flight search results");
+        omnitureDataCollector.setDomain("www.despegar.com.ar");
+
+        /*********************************************/ 
+        omnitureDataCollector.setTipoProducto("flight");
+        omnitureDataCollector.setTipoDeViaje("RoundTrip");
+        omnitureDataCollector.setCodigoCiudadOrigen("BUE");
+        omnitureDataCollector.setCodigoCiudadDestino("PAR");
+        omnitureDataCollector.setCodigoCiudadOrigenDestino();
+        omnitureDataCollector.setFechaIda("2012-01-02");
+        omnitureDataCollector.setFechaVuelta("2012-03-22");
+        omnitureDataCollector.setCantidadDeAdultos(parseInt(1));
+        omnitureDataCollector.setCantidadDeNinios(parseInt(0));
+        omnitureDataCollector.setProductSearches();
+        omnitureDataCollector.setSearches();
+        omnitureDataCollector.setIncluyeHotel();
+        omnitureDataCollector.setClase();
+        omnitureDataCollector.setServer("VMWS-VUELOS09");
+        omnitureDataCollector.setTipoClase("");
+        
+	</script>
+	
+	<div class="contentBackground">
+        <div class="topContainer">
+            <span class="mainSprite topLeftWhite"></span>    
+            <span class="mainSprite topRightWhite"></span>
+            <div class="clearBox"></div>
+        </div>
+        <div class="shadowLeft"></div>
+        <div class="shadowRight"></div>
+        <div id="content">
+            <form id="CheckOutForm" method="post" action="https://www.despegar.com.ar/Booking/FlightCheckOut/PurchaseForm">
+            <div>
+                <input type="hidden" id="ItinHashCode" name="ItinHashCode" />
+                <input type="hidden" id="TicketHashCode" name="TicketHashCode" />
+                <input type="hidden" id="TicketVersion" name="TicketVersion" />
+                <input type="hidden" id="URLSearchReferer" name="URLSearchReferer" />
+                <input type="hidden" id="URLFlightsService" name="URLFlightsService" />            
+                <input type="hidden" id="SecurityToken" name="SecurityToken" />
+                <input type="hidden" id="PayloadIntegrityToken" name="PayloadIntegrityToken" />
+                <input type="hidden" id="Rules" name="Rules" />
+                <input type="hidden" id="ItineraryDeserializeParams" name="ItineraryDeserializeParams" />
+            </div>
+            </form>
+            <form id="RulesFligthForm" action="/Search/Flights/Rules.aspx" method="post"
+            target="RulesWindows">
+            <input type="hidden" id="Itinerary" name="Itinerary" />
+            </form>
+            <form id="callFlightSearch" action="/Search/Flights/AdvancedSearch" method="post">
+                <input type="hidden" id="DepLocDesc" name="DepLocDesc" />
+                <input type="hidden" id="DepLocCode" name="DepLocCode" />
+                <input type="hidden" id="DestLocDesc" name="DestLocDesc" />
+                <input type="hidden" id="DestLocCode" name="DestLocCode" />
+                <input type="hidden" id="Roundtrip" name="Roundtrip" />
+                <input type="hidden" id="DepDate" name="DepDate" />
+                <input type="hidden" id="RetDate" name="RetDate" />
+                <input type="hidden" id="ADT" name="ADT" />
+                <input type="hidden" id="CNN" name="CNN" />
+                <input type="hidden" id="INF" name="INF" />
+                <input type="hidden" id="MultidestinationsData" name="MultidestinationsData" />
+            </form>
+            <form id="callDisambiguation" action="/Search/Disambiguation/Disambiguation.aspx"
+            method="post">
+            <input name="data" type="hidden" id="data" />
+            <input name="index" type="hidden" id="index" />
+            <input name="withoutAirportType" type="hidden" id="withoutAirportType" />
+            </form>
+            <div id="sinResultados" class="HideDiv">
+                <h1>
+                    <span class="mainSprite circuleCross"></span>
+                    No encontramos vuelos con asientos disponibles para su búsqueda</h1>
+                <p>
+                    Realice una nueva búsqueda en ciudades cercanas o en otras fechas</p>
+                <p>
+                    Algunas rutas aéreas están activas en alta temporada</p>
+                <p>
+                    <a class="displayCursor">
+                        Nueva Búsqueda</a></p>
+            </div>
+            <div id="infoBusquedaRealizada" class="HideDiv">
+                <p class="infoBusquedaRealizadaTitle">
+                    Su búsqueda fue:</p>
+                
+<table id="TableFeedBack">
+    
+</table>
+                <div id="RoundTripDescription">
+	
+                    <p id="nombreDestino" class="nombreDestinoVuelos">
+                        Vuelos de
+                        <strong>
+                            Buenos Aires</strong>
+                        a
+                        <strong>
+                            París</strong></p>
+                    <p>
+                        Ida:
+                        <strong>
+                            Lunes 2 enero 2012</strong> <em class="separador">
+                                |</em>Vuelta:
+                        <strong>
+                            Jueves 22 marzo 2012</strong>
+                
+</div>
+                <span id="separatorNotResultReturnDate" class="separador"><em class="separador">
+                    |</em></span>Pasajeros:
+                <strong>
+                    1 Adulto</strong></p>
+                <p>
+                    <strong></strong></p>
+                <p>
+                    <strong></strong><em class="separador"></em><strong></strong></p>
+                <p>
+                    <strong></strong></p>
+                <p>
+                    <strong></strong></p>
+            </div>
+            <form name="FlightResultsForm" method="post" action="FlightResults.aspx" id="FlightResultsForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4NjY5MjMwMTBkZA==" />
+</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var X_UOW = 'SITE-VMWS-VUELOS09-z3imzs';var itinerarySearchType = 'RoundTrip';var isDisambiguation = false;var isDepartureAndArrivalSeparate = true;var isClustered = true;var spriteAirlines = 'ib|ux|jj|az|la|kl|co|af|aa|ar|dl|ua|cm|pu|ba|am';var hrefFacebook = 'http://www.despegar.com.ar/pasajes/vuelos-a-paris-desde-buenos+aires-bue-par';var Logotipo = 'brandDespegarLarge';var month = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];var ErrorSendMailDestinatarioRequired = 'Por favor ingrese la dirección de e-mail del destinatario.';var ErrorSendMailDestinatarioInvalidMails = 'Por favor ingrese una dirección de e-mail correcta.';var ErrorSendMailRemitenteNombreRequired = 'Por favor ingrese su nombre.';var ErrorSendMailRemitenteMailRequired = 'Por favor ingrese su dirección de e-mail.';var ErrorSendMailRemitenteMailInvalidMail = 'Por favor ingrese una dirección de e-mail correcta.';var ErrorSendMailRemitenteNombreValid = 'Por favor ingrese un nombre correcto.';var NotaPrint = 'Nota: Las tarifas que encuentre en una nueva búsqueda pueden no ser las mismas que figuran en esta impresón.';var CompraPrint = 'Para comprar un pasaje ingrese a <a href="http://www.ar.despegar.com/">www.ar.despegar.com</a> e ingrese los siguientes parámetros en el formulario de búsqueda de vuelos:';var FlightsFromPrint = 'Vuelos de';var FlightToPrint = 'a';var BetterPricePrint = 'Mejor Precio Garantizado';var FlightFoundDespegar = 'Vuelo encontrado en Despegar.com';var TitleFlightPrint = 'Despegar.com Impresión Vuelo.';var CommonCssUrl = '/despegar/pkg/common.css';var day = ['dom','lun','mar','mie','jue','vie','sab'];var OperationTypeReservation = '1';var culture = {"DestinyUpper":"IDA","BackUpper":"VUELTA","Title":"Despegar.com - Resultados de Vuelos","Stop":"Parada","Stops":"Paradas","day":"día","days":"dias","min":"min","hs":"hs","Select":"Elija edad del niño","messageAdtLessCnn":"No pudimos buscar porque: \u003c%\u003e- Hay al menos un bebé menor de 2 años que no tiene un adulto que lo acompañe. \u003c%\u003e Agregue más adultos o aumente la edad de uno de los bebés para tarifarlo como niño. \u003c%\u003e\u003c%\u003e Por favor intente de nuevo y si tiene dudas, llámenos. \u003c%\u003e\u003c%\u003eNo hay suficientes adultos para acompañar a todos los bebés menores de dos años.","messageCnnInvalidAge":"No pudimos buscar porque:\u003c%\u003e\r\n\u003c&\u003e\u003c%\u003e\u003c%\u003e\r\nPor favor intente de nuevo.","Skype":"\u003cscript src=\"/js/skypeCheck.js\" type=\"text/javascript\" id=\"skypejs\"/\u003e\u003c/script\u003e\u003ca href=\"##SkypeUrl##\" onclick=\"javascript:return skypeCheck();\"\u003eSkype\u003c/a\u003e","CallSkypeUrl":"skype:despegar_argentina?call","first":"primer","second":"segundo","third":"tercer","fourth":"cuarto","fifth":"quinto","sixth":"sexto","seventh":"séptimo","eighth":"octavo","NewSearch":"nueva búsqueda","directFlight":"Vuelo Directo","messageNeddAgeInf":"Es necesario indicar la edad del \u003c%\u003e niño.","connection":"Conexión en {0} con espera de {1}","Here":"Aquí","ChangeAirport":"con cambio de aeropuerto","nonLocalCurrencyMask":"U$S","localCurrencyMask":"$","searchRateINF":"0 a 2 años (en brazos)","searchRateINFCNN":"0 a 2 años (en asiento)","searchRateCNN":"0 a 11 años","searchRateADT":"12 años o más","searchFinishTrip":"finalizar el viaje","searchCNNRate":"Tarifa niño","searchADTRate":"Tarifa adulto","searchINFRate":"Tarifa bebé","technicalStop":"Parada técnica","viewOnlyFlightsOff":"Ver solamente vuelos de","showAllResults":"Ver todos los vuelos","showOnlyDirectFlights":"Ver sólo vuelos directos","showOnlyOneStops":"Ver sólo vuelos con 1 parada","showOnlyMoreOneStops":"Ver sólo vuelos con 2 paradas o más","viewThisFlight":"Ver este vuelo","DirectFlight":"Vuelo Directo","EvenPayments":"Hasta en {0} cuotas de","soldOut":"agotado","BuyTitle":"comprar","ReserveTitle":"reservar","MaxPaymentQuant":"Hasta en {0} cuotas"};var SelectedMoney = '';urlVuelos = '/Flights.Services/Flights/Flights.svc/ClusteredFlights/BUE/PAR/2012-01-02/2012-03-22/1/0/0';var urlAirlineImgs = '/galeria/images/aerolineas25x25';var secTokenCheckOut = 'Y+6x6lW1VYqW9gD2Ucwci73/hUibHtfoeVaRT0K4mKY=';var IATACountry = 'AR';var Parameters = {"DepLocDesc":"Buenos Aires","DepLocCode":"BUE","DestLocDesc":"París","DestLocCode":"PAR","DepDate":"02/01/2012","RetDate":"22/03/2012","ADT":"1","CNN":"0","INF":"0","itineraryType":"0"};//]]>
+</script>
+
+            <iframe src="" id="printFrame" name="printFrame" class="iFramePrint"></iframe>
+            <div id="errorBusqueda" style="display: none">
+                <h1>
+                    <span class="mainSprite circuleCross"></span>
+                    No pudimos buscar vuelos por los siguientes motivos:</h1>
+                <ul>
+                </ul>
+            </div>
+            <div id="informacionDeBusqueda">
+                <div class="advertenciaFiltrosSinResultados HideDiv">
+                    <span class="mainSprite circuleExclamationMarkBig"></span>
+                    <p class="tituloAdvertencia">
+                        No encontramos vuelos
+                        con asientos disponibles.
+                    </p>
+                    <p class="solucionAdvertencia">
+                        Le mostramos vuelos de todas las aerolíneas, sin restricción de horario, clase o escalas.
+                    </p>
+                </div>
+                <div class="mainSprite logoMejorPrecioSpanish">
+                </div>
+                <h1>
+                    
+                    <span id="FeedBack">
+                        Vuelos de&nbsp;<span id="lblFromCity" class="lblHeader">Buenos Aires</span>&nbsp;a&nbsp;<span id="lblToCity" class="lblHeader">París</span>
+                    </span>
+                    <a id="LinkBetterPrices" class="displayCursor"><span class="ltWith">con</span>&nbsp;mejor precio garantizado</a>
+                </h1>
+                <h2>
+                    <div id="DataFeedBack" class="searchDataDescription">
+                        <div>
+                            Ida:
+                            <span id="lblDepartureDate" class="lblHeader">Lunes 2 enero 2012</span>
+                            <span id="separatorReturnDate" class="separador">|</span>
+                            Vuelta:
+                            <span id="lblArrivalDate" class="lblHeader">Jueves 22 marzo 2012</span>
+                            <span class="separador">|</span>
+                            Pasajeros:
+                            <span id="lblPassengers" class="lblHeader">1 Adulto</span>
+                        </div>
+                        <div>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                        <div>
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a id="linkNewSearch" class="NewSearch displayCursor">
+                            Nueva Búsqueda</a>
+                    </div>
+                </h2>
+            </div>
+            <div id="loadingDisplay">
+                <!--[if !IE]> -->
+                <object type="application/x-shockwave-flash" data="/Search/Flights/swf/Despegar/buscandoAR.swf"width="960" height="148">
+                    <!-- <![endif]-->
+                    <!--[if IE]>
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+                width="960" height="148">
+                <param name="movie" value="/Search/Flights/swf/Despegar/buscandoAR.swf" /> 
+                <!-->
+                    <!---->
+                    <param name="wmode" value="transparent" />
+                    <param name="loop" value="true" />
+                    <param name="menu" value="false" />
+                    <div id="loadingContainer">
+                        <img src="//search/img/cargando.gif" alt="" />
+                        <strong>
+                            Buscando vuelos...</strong>
+                    </div>
+                    <!--img src="//Flights/img/Animacionbusqueda.gif" alt="" /-->
+                </object>
+                <!-- <![endif]-->
+            </div>
+            <div id="tablaPreciosYAerolineas" class="nonLocalMoney Hide">
+                <table id="tablaMatrix">
+                    <tbody>
+                        <tr>
+                            <th class="headMatrix columnaEscalas" style="padding-left: 15px;">
+                                Resumen
+                                <em class="finalPriceMatrix"">(tarifa final)</em>
+                                <em style="display:none" class="totalAdultPriceMatrix"">tarifa por adulto</em>
+                            </th>
+                            <th class="headMatrix" FlagColumn="2"></th>
+                            <th class="headMatrix" FlagColumn="3"></th>
+                            <th class="headMatrix" FlagColumn="4"></th>
+                            <th class="headMatrix" FlagColumn="5"></th>
+                            <th class="headMatrix" FlagColumn="6"></th>
+                            <th class="headMatrix" FlagColumn="7"></th>
+                            <th class="headMatrix" FlagColumn="8"></th>
+                        </tr>
+                        <tr>
+                            <td class="CeldaFiltroStops columnaEscalas DirectFlight displayCursor" flagstops="DirectFlight">
+                                <a id="aDirectFlight">Vuelo Directo</a>
+                            </td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                        </tr>
+                        <tr>
+                            <td class="CeldaFiltroStops columnaEscalas OneStop displayCursor" flagstops="OneStop">
+                                <a id="aOneStop">1 Parada</a>
+                            </td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                        </tr>
+                        <tr class="ultimaFila">
+                            <td class="CeldaFiltroStops columnaEscalas TwoStops displayCursor" flagstops="TwoStops">
+                                <a id="aTwoStops">2 Paradas o más</a>
+                            </td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                            <td class="cellMatrix"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="contenedorResultados" class="Hide">
+                <div class="tituloResultados-Filtros" id="elijaUnVuelo">
+                    <div>
+                        <h3 id="QItinerariesShow" class="tituloResultados">
+                            <strong class="resultsVisible"></strong>
+                            de
+                            <strong class="totalResults"></strong>
+                            Resultados
+                        </h3>
+                        <a id="sortAndFilterHelp" class="displayCursor">
+                            ¿Cómo filtrar?</a>
+                        <a id="removeFilters" class="Hide showAll displayCursor">
+                            Mostrar todos los resultados</a>
+                    </div>
+                    <div class="moneda HideDiv">
+                        <p>
+                            <label for="cmbElegirMoneda">
+                                Moneda:</label>
+                            <select name="cmbElegirMoneda" id="cmbElegirMoneda">
+                                <option value="nonlocal">
+                                    Dólares</option>
+                                <option value="local">
+                                    Pesos Argentinos</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <div id="HeaderFavorites" class="tituloResultadosFavoritos" style="display: none">
+                    <div class="FloatLeft">
+                        <h3 id="Q_Favorites" class="tituloResultados">
+                            Vuelos preferidos
+                            (0)</h3>
+                    </div>
+                    <div class="clearBox">
+                    </div>
+                </div>
+                <div id="DivFavoritos" class="nonLocalMoney">
+                </div>
+                <div id="ContainerItinerarios" class="nonLocalMoney">
+                </div>
+                <div id="prototypeRow" class="cajaResultado" style="display: none;">
+                    <div class="HideDiv ViewItinerary">
+                        <br />
+                        <div class="HideItinararie">
+                            El vuelo se ha ocultado.
+                        </div>
+                        <div class="FloatLeft">
+                            <a class="displayCursor">
+                                Volver a mostrar este vuelo</a>
+                        </div>
+                        <div id="CompressItinAirlineName" class="PaddingLeft">
+                            <strong></strong>
+                        </div>
+                        <div id="CompressItinImgAirline" class="PaddingImg">
+                        </div>
+                        <div id="CompressItinPriceLocalAmount" class="local PaddingLeft">
+                            Total:<strong class="priceValue">$</strong></div>
+                        <div id="CompressItinPriceNonLocalAmount" class="nonLocal PaddingLeft">
+                            Total:<strong class="priceValue">U$S</strong></div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="contenedor-ida-y-vuelta-mas-tarifa-desgloce">
+                        <div class="contenedorIdaYVuelta">
+                            <div class="destino">
+                                <div class="titulo">
+                                    <span class="mainSprite buttonPlaneRightOn"></span><span class="idaYVueltaTitle">
+                                    </span>
+                                    <div class="fechayDestinos">
+                                        <span class="fechaVuelo"></span>,
+                                        de
+                                        <span class="aeropuertoSalida"></span>
+                                        a
+                                        <span class="aeropuertoLlegada"></span>
+                                    </div>
+                                </div>
+                                <div class="informacionDeVuelo">
+                                    <div class="salida-llegada-escalas" style="display: none">
+                                        <div class="flightRadioContainer">
+                                            <!--Aca se crea el input. Se hace dinamicamente porque en ie6/7 no se puede cambiar el name de un input-->
+                                            <!--input class="flightRadio" type="radio" name="flight1" /-->
+                                        </div>
+                                        <div class="salida">
+                                            Sale:
+                                            <strong class="flightTime"></strong>
+                                        </div>
+                                        <div class="llegada">
+                                            Llega:
+                                            <strong class="flightTime"></strong>
+                                        </div>
+                                        <div class="duracionVuelo">
+                                        </div>
+                                        <div class="escalas">
+                                            <a class="detail"></a>
+                                            <div class="mainSprite airportChangeIcon" style="display: none">
+                                            </div>
+                                        </div>
+                                        <div class="aerolineasDeVuelo">
+                                            <strong></strong>
+                                        </div>
+                                        <div class="clearBox">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Workaround para IE. Al clonar destino y luego cambiarle la clase por destinoFinal no funcionaba. Los eventos luego no se bindeaban.-->
+                             <div class="destinoFinal">
+                                <div class="titulo">
+                                    <span class="mainSprite buttonPlaneRightOn"></span><span class="idaYVueltaTitle">
+                                    </span>
+                                    <div class="fechayDestinos">
+                                        <span class="fechaVuelo"></span>,
+                                        de
+                                        <span class="aeropuertoSalida"></span>
+                                        a
+                                        <span class="aeropuertoLlegada"></span>
+                                    </div>
+                                </div>
+                                <div class="informacionDeVuelo">
+                                    <div class="salida-llegada-escalas" style="display: none">
+                                        <div class="flightRadioContainer">
+                                            <!--Aca se crea el input. Se hace dinamicamente porque en ie6/7 no se puede cambiar el name de un input-->
+                                            <!--input class="flightRadio" type="radio" name="flight1" /-->
+                                        </div>
+                                        <div class="salida">
+                                            Sale:
+                                            <strong class="flightTime"></strong>
+                                        </div>
+                                        <div class="llegada">
+                                            Llega:
+                                            <strong class="flightTime"></strong>
+                                        </div>
+                                        <div class="duracionVuelo">
+                                        </div>
+                                        <div class="escalas">
+                                            <a class="detail"></a>
+                                            <div class="mainSprite airportChangeIcon" style="display: none">
+                                            </div>
+                                        </div>
+                                        <div class="aerolineasDeVuelo">
+                                            <strong></strong>
+                                        </div>
+                                        <div class="clearBox">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tarifa-desgloce" class="tarifa-desgloce">
+                            <div class="nonLocal tarifaPorAdulto">
+                                Tarifa por adulto
+                                <br />
+                                <em class="currencyMask">
+                                    U$S</em>
+                                <strong class="currencyMask"></strong>
+                            </div>
+                            <div class="local LocaltarifaPorAdulto">
+                                Tarifa por adulto
+                                <br />
+                                <em class="currencyMask">
+                                    $</em>
+                                <strong class="currencyMask"></strong>
+                            </div>
+                            <div class="nonLocal nonLocalDesgloce">
+                                <ul class="desgloceList">
+                                    <li>
+                                        Tarifas:</li>
+                                    <li class="pasajerosADT"><strong class="itemDesgloce">
+                                        <span id="lblADT">1 Adulto</span></strong><em class="precioDesgloce">U$S</em></li>
+                                    <li class="pasajerosCNN Hide"><strong class="itemDesgloce">
+                                        <span id="lblCNN"></span></strong><em class="precioDesgloce">U$S</em></li>
+                                    <li class="pasajerosINF Hide"><strong class="itemDesgloce">
+                                        <span id="lblINF"></span></strong><em class="precioDesgloce">U$S</em></li>
+                                    <li class="tasas"><strong class="itemDesgloce">
+                                        Imp. y tasas</strong><em
+                                            class="precioDesgloce">U$S</em></li>
+                                    <li class="cargos"><strong class="itemDesgloce">
+                                        Cargos</strong><em
+                                            class="precioDesgloce">U$S</em></li>
+                                    <li class="totalDesgloce"><strong class="itemDesgloce">
+                                        Total</strong><em
+                                            class="precioDesgloce">U$S</em></li>
+                                </ul>
+                                <div class="clearBox">
+                                </div>
+                            </div>
+                            <div class="local Localdesgloce">
+                                <ul class="desgloceList">
+                                    <li>
+                                        Tarifas:</li>
+                                    <li class="pasajerosADT"><strong class="itemDesgloce">
+                                        <span id="lblADTLocalAmount">1 Adulto</span></strong><em class="precioDesgloce">$</em></li>
+                                    <li class="pasajerosCNN Hide"><strong class="itemDesgloce">
+                                        <span id="lblCNNLocalAmount"></span></strong><em class="precioDesgloce">$</em></li>
+                                    <li class="pasajerosINF Hide"><strong class="itemDesgloce">
+                                        <span id="lblINFLocalAmount"></span></strong><em class="precioDesgloce">$</em></li>
+                                    <li class="tasas"><strong class="itemDesgloce">
+                                        Imp. y tasas</strong><em
+                                            class="precioDesgloce">$</em></li>
+                                    <li class="cargos"><strong class="itemDesgloce">
+                                        Cargos</strong><em
+                                            class="precioDesgloce">$</em></li>
+                                    <li class="totalDesgloce"><strong class="itemDesgloce">
+                                        Total</strong><em
+                                            class="precioDesgloce">$</em></li>
+                                </ul>
+                                <div class="clearBox">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="contenedor-promo-detalle-acciones-mas-boton">
+                        <div class="promo-detalle-acciones">
+                            <div class="promo-detalle">
+                                <div class="promociones">
+                                    
+                                    <a class="Hide promocionesLink"><strong class="promoCuotas"><span class="cuotas"></span><span class="localCuotas">&nbsp
+                                        $
+                                        <span class="cuotaValue"></span></span><span class="nonLocalCuotas">&nbsp
+                                            U$S
+                                            <span class="cuotaValue"></span></span>! </strong></a>
+                                </div>
+                                <div class="comercialPolicy">
+                                    <p class="comercialPolicyParraf">&nbsp;</p>
+                                </div>
+                            </div>
+                            <div id="acciones" class="acciones">
+                                <a class="mainSprite iconEmail accionEnviar" title="Enviar este resultado por e-mail">
+                                </a><a class="mainSprite iconPrint accionImprimir" title="Imprimir este resultado">
+                                </a>
+                            </div>
+                        </div>
+                        <div id="boton" class="boton">
+                            <button type="button" class="reservar" onclick="javascript:DoCheckout(this, false, true);">
+                                <span><em>
+                                    reservar</em></span></button>
+                            <button type="button" class="btnRed comprar" onclick="javascript:DoCheckout(this, true, true); omnitureDataCollector.setRankingVuelos(this);">
+                                <span><em>
+                                    comprar</em></span></button>
+                        </div>
+                        <div class="clearBox">
+                        </div>
+                    </div>
+                    <div class="HideDiv Prov">
+                    </div>
+                    <div class="HideDiv SortPrice">
+                    </div>
+                    <div class="HideDiv SortStops">
+                    </div>
+                    <div class="HideDiv SortStopsTotal">
+                    </div>
+                    <div class="HideDiv SortLength">
+                    </div>
+                    <div class="HideDiv SortAirlineName">
+                    </div>
+                    <div class="HideDiv SortTopFlights">
+                    </div>
+                </div>
+                <div class="clearBox">
+                </div>
+            </div>
+            <div id="DivDetalle" class="popUp detalleDelVuelo HideDiv FlightDetail">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="contenidoDelPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <span class="puntita"></span>
+                                    <div class="cargandoPopUp">
+                                        <div class="mainSprite closeWindow">
+                                        </div>
+                                        <div id="Div1">
+                                            <img src="/search/img/cargando.gif" />
+                                            <br />
+                                            <br />
+                                            <strong>
+                                                Cargando...</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            <div id="nuevaBusqueda" class="popUp nuevaBusqueda HideDiv">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="cargandoPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <div id="solapaContainerCargando">
+                                        <img src="/search/img/cargando.gif" />
+                                        <br />
+                                        <br />
+                                        <strong>
+                                            Cargando...</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            </form>
+            <div id="DivMail" class="popUp enviarPorMail HideDiv">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="cargandoPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <div id="Div2">
+                                        <img src="/search/img/cargando.gif" />
+                                        <br />
+                                        <br />
+                                        <strong>
+                                            Cargando...</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            <div id="DivMejorPrecio" class="popUp garantiaMejorPrecio HideDiv">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="contenidoDelPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <strong class="tituloPopUp">
+                                        Despegar.com: La agencia Nº 1 en precio</strong>
+                                    <p>
+                                        Trabajamos todos los días para ayudarle a economizar tiempo y dinero en sus compras de viaje. Queremos que tenga la tranquilidad que cada vez que compra en Despegar.com está accediendo a las mejores tarifas disponibles. Por ello ahora le garantizamos que en Despegar.com usted encontrará las mejores tarifas en vuelos y hoteles, en el caso de que usted encontrase una mejor tarifa le daremos la diferencia hasta un máximo de USD 100, como crédito en una futura compra en nuestro sitio.
+                                    </p>
+                                    <p>
+                                        <a href='/Contents/BetterPrice/TermsAndConditions'
+                                            target="_blank">
+                                            Garantía de mejor precio</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            <div id="DivCuotas" class="popUp opcionesDePago HideDiv nonLocalMoney">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="contenidoDelPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <span class="puntita"></span><strong class="tituloPopUp">
+                                        Opciones de pago</strong>
+                                    <table>
+                                        <tbody>
+                                            <tr class="CreditCardsRow">
+                                                <th>
+                                                    Cuotas
+                                                </th>
+                                            </tr>
+                                            <tr id="PrototypeRow" class="Hide">
+                                                <td class="columnaCantCuotas">
+                                                </td>
+                                                <td>
+                                                    <div id="noLocal" class="nonLocal">
+                                                        U$S<em></em></div>
+                                                    <div id="local" class="local">
+                                                        $<em></em></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="DivCantidadCuotas" class="popUp opcionesDePago HideDiv nonLocalMoney">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq"></div><div class="arribaMedio"></div><div class="esquina arribaDer"></div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="contenidoDelPopUp">
+                                    <div class="mainSprite closeWindow"></div>
+                        	        <span class="puntita"></span>
+                        	            <strong class="tituloPopUp">Cantidad de Pagos</strong>
+                                    <table>
+                            	        <tbody>
+                                	        <tr class="CreditCardsRow">
+                                            </tr>
+                                            <tr id="firstRowPaymentsQuant" class="">
+                                    	        <td>                                                               	
+                                                </td>
+                                            </tr>                                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq"></div><div class="abajoMedio"></div><div class="esquina abajoDer"></div>
+                </div>
+           </div>
+        
+            <div id="checkoutValidationPopUp" class="popUp checkoutFlightValidation HideDiv nonLocalMoney">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="contenidoDelPopUp">
+                                    <div class="mainSprite closeWindow" onclick="javascript:$('#checkoutValidationPopUp').addClass('HideDiv');">
+                                    </div>
+                                    <div class="tituloPopUp">
+                                        <span class="mainSprite circuleExclamationMarkLittle"></span>
+                                        <span class="tituloBody">Atención:</span>
+                                    </div>
+                                    <div class="bodyPopUp">
+                                        Para efectuar esta operación, es necesario seleccionar una opción de ida y una de vuelta.<br />
+Por favor elija entre las opciones resaltadas.
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            <div id="DivComoOrdenarYFiltrar" class="popUp HideDiv popupComoOrdenarYFiltrar">
+                <div class="contenedorPopUp">
+                    <div class="esquina arribaIzq">
+                    </div>
+                    <div class="arribaMedio">
+                    </div>
+                    <div class="esquina arribaDer">
+                    </div>
+                    <div class="contenedorFondoDer">
+                        <div class="contenedorFondoIzq">
+                            <div class="contenedorBordes">
+                                <div class="cargandoPopUp">
+                                    <div class="mainSprite closeWindow">
+                                    </div>
+                                    <div id="Div4">
+                                        <img src="/search/img/cargando.gif" alt="" />
+                                        <br />
+                                        <br />
+                                        <strong>
+                                            Cargando...</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="esquina abajoIzq">
+                    </div>
+                    <div class="abajoMedio">
+                    </div>
+                    <div class="esquina abajoDer">
+                    </div>
+                </div>
+            </div>
+            <div class="popupHelp" id="popupHelp" style="display: none;">
+                <div class="popupHelpWrapper">
+                    <div onclick="$('#popupHelp').hide();" class="mainSprite closeWindow">
+                    </div>
+                    <div class="airportDescriptionPopup" style="display: none">
+                        <p>
+                            Aeropuerto:
+                        </p>
+                        <p class="airportName">
+                        </p>
+                    </div>
+                    <div class="changeAirportPopup" style="display: none">
+                        <span id="changeAirportMessageTemplate" style="display:none">Parada en <strong>{0}</strong>, {1}, con <strong>cambio de aeropuerto</strong>. <br/ > Deberá trasladarse de {2} a {3}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottomContainer">
+            <span class="mainSprite bottomLeftWhite"></span>
+            <span class="mainSprite bottomRightWhite"></span>
+            <div class="clearBox"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //variables utilizadas en cajabusqueda.js
+        var vPais =  1;
+        var feriados = null;
+        var sabadoLaborable = true;
+        var domingoLaborable = false;
+        var Today = new Date(2011,10,17);
+        var dateTodayHome = "17/11/2011";
+        var tipoCalendario = "PM"; 
+        
+        var diasParaEmitir = 1;
+        //Se setea en vuelos.js
+        var iDiasAnticipo;
+        
+        var sDefaultTextOrigen = "Buenos Aires, Argentina";
+        var sDefaultValueOrigen = "BUE";
+ 
+        //TODO: HARCODED
+        var baseUrl = "//search";
+        dateFormatStr = "DD/MM/AAAA";
+    </script>
+
+    <script type="text/javascript" src="/Search/Flights/js/Utils-1.1.js"></script>
+    
+    <script type="text/javascript" src="/search/Flights/js/matrix.js"></script>
+    <script type="text/javascript" src='/search/Flights/js/commonResults.js'></script>
+    <script type="text/javascript" src="/search/Flights/js/Rules-1.1.js"></script>
+    <script type="text/javascript" src="/search/Flights/js/print-1.2.js"></script>
+    <script type="text/javascript" src="/search/Flights/js/clusteredVuelos.js"></script>
+
+    <script type="text/javascript">
+        var urlVuelos;
+        var urlVuelosPing;
+        var urlBase = '/Search';
+        var isDesambiguate;
+        var localeFacebook = "es_LA";
+
+        function Init() {
+			
+            if (vPais == "10") {
+                var mejorPrecio = $(".logoMejorPrecioSpanish");
+                mejorPrecio.removeClass("logoMejorPrecioSpanish");
+                mejorPrecio.addClass("logoMejorPrecioPortuguesse");
+            }
+            if (!isDesambiguate) {//En el caso de que sea Desambiguaci�n no debe hacer nada porque tira error y redirige a la p�gina de error
+                InitEvents();
+                if (urlVuelosPing != null) {
+                    CallPingService();
+                }
+                if (typeof(urlVuelosSovClustered) != "undefined") {
+                    CallSovClusteredService();
+                }
+                if (urlVuelos != null) {
+                    CallFlightsService();
+                }
+                else {
+                    $("#loadingDisplay").hide();
+                    if (typeof (jsonErrors) != "undefined") {
+                        errors = JSON.parse(jsonErrors);
+                        handleErrors(errors);
+                    }
+                    else {
+                        console.error(err);
+                        // window.location = "/Contents/ErrorPage/errorPage.aspx";
+                    }
+                }
+                loadPopUps();
+                loadFlightsJS();
+                //Ver por qué esta (carga 2 veces los popups)
+                /*if (urlVuelosPing == null) {
+                    loadPopUps();
+                }*/
+            }
+			
+        }
+
+        $(document).ready(Init);
+
+        function loadFlightsJS() {
+            loadScript("http://ar.staticontent.com/js-versioned/17.11/custom/jquery.validate.min.js", setValidateFlag);
+            loadScript("/Search/Flights/js/tinysort.js", setTinysortFlag);
+            loadScript("/homesv2/js/CajaBusqueda.js?V=20090320", setCajaBusquedaFlag);
+            loadScript("/js-versioned/17.11/custom/autocompleteAndCalendar/topCiudades/TopCiudades1.js", setTopCiudadesFlag);
+            loadScript("/homesRevancha/js/AutocompleteAndCalendar.js?V=20090323", setAutocompleteAndCalendarFlag);
+        }
+
+        function rbRoundTrip_onclick(value) {
+            $("#fecha2").removeClass("noEvents");
+            $("#fecha2").removeAttr("disabled");
+            $("#fecha2Image").removeClass("noEvents");
+            $("#fecha2Image").removeClass("buttonCalendarOff");
+            $("#fecha2Image").addClass("buttonCalendarOn");
+            
+            setTipoVuelo(value);
+            changeLabelAge();
+        }
+
+        function rbOneWay_onclick(value) {
+            $("#fecha2").attr("disabled", "disabled");
+            $("#fecha2").addClass("noEvents");
+            $("#fecha2Image").addClass("noEvents");
+            $("#fecha2Image").removeClass("buttonCalendarOn");
+            $("#fecha2Image").addClass("buttonCalendarOff");
+
+            setTipoVuelo(value);
+            changeLabelAge();
+        }		
+    </script>
+
+
+
+<script type="text/javascript">
+
+    var javaScriptLoader = function(jsPath) {
+        xmlhttp = null;
+        if (window.XMLHttpRequest) {// code for IE7, Firefox, Opera, etc.
+            xmlhttp = new XMLHttpRequest();
+        }
+        else if (window.ActiveXObject) {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        headTag = document.getElementsByTagName("head")[0];
+        var scriptTag = document.createElement("script");
+        scriptTag.setAttribute("type", "text/javascript");
+        scriptTag.setAttribute("charset", "utf-8");
+
+        if (xmlhttp != null) {
+            xmlhttp.open("GET", jsPath, false);
+            //xmlhttp.setRequestHeader("Content-Type", "application/x-javascript; charset=UTF-8");
+
+            xmlhttp.send(null);
+
+            var scriptContent = "//START of '" + jsPath + "' file \n"
+            scriptContent += xmlhttp.responseText;
+            scriptContent += "//END of '" + jsPath + "' file \n";
+
+
+            if (xmlhttp.status == 200 || xmlhttp.status == 0 || xmlhttp.status == undefined) {
+                scriptTag.text = scriptContent;
+            }
+            else {
+                scriptTag.text = "//ERROR al cargar archivo '" + jsPath + "' (" + xmlhttp.statusText + ")\n"
+            }
+        }
+        else {
+            scriptTag.text = "//ERROR al cargar archivo '" + jsPath + "' (no se pudo instanciar XMLHttpRequest)\n"
+        }
+        headTag.appendChild(scriptTag);
+    }
+
+    if (!jQuery) {
+        javaScriptLoader("/js-versioned/17.11/custom/jquery-1.4.2.min.js")
+    }
+    if (typeof registerNameSpace == "undefined") {
+        javaScriptLoader("/js-versioned/17.11/FrameworkJS/base.js");
+    }
+    
+</script>
+
+<script type="text/javascript">
+
+   var facebookOptions ={
+       app_id: "155158651173293",
+       use_xfbml: true,
+       extendPermissions: 'publish_stream',
+       locale: "es_LA"
+   };
+
+</script>
+
+<script type="text/javascript" src="/js-versioned/17.11/FrameworkJS/pkg/Footer.js"></script>
+
+    <div id="footer" class="footer">
+		<div class="footerContainer">
+			<ul id="col1" class="colum columBorder">
+				<li class="row rowTitle">Recursos para su viaje</li>
+				<li class="row"><a class="link" target="_blank" href="http://www.blog.despegar.com/">El blog de Despegar</a></li>
+				<li class="row"><a class="link" target="_blank" href="http://www.despegar.com.ar/turismo/">Información sobre destinos</a></li>				
+			</ul>
+			<ul id="col2" class="colum columBorder">
+			
+				<li class="row rowTitle">Sobre Despegar.com</li>
+				
+			</ul>
+			
+			<ul id="col3" class="colum"><li class="row rowTitle">Más Buscados</li><li class="row"><a class="link" title="Aerolineas Argentinas" href="http://www.despegar.com.ar/aerolineas/aerolineas-argentinas.html">Aerolíneas Argentinas</a><span> - </span></li><li class="row"><a class="link" title="Lan" href="http://www.despegar.com.ar/aerolineas/lan.html">Lan Argentina</a><span> - </span></li><li class="row"><a class="link" title="Tam" href="http://www.despegar.com.ar/aerolineas/tam-lineas-aereas.html">Tam líneas aéreas</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Buenos Aires, Argentina" href="http://www.despegar.com.ar/hoteles/hl-bue-i1/hoteles-en-buenos-aires">Hoteles Buenos Aires</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Bariloche" href="http://www.despegar.com.ar/hoteles/hl-brc-i1/hoteles-en-bariloche">Hoteles Bariloche</a><span> - </span></li><li class="row"><a class="link" title="Pasajes Aéreos Baratos" href="http://www.despegar.com.ar/vuelos-en-oferta-desde-buenos-aires.html">Pasajes Aéreos</a><span> - </span></li><li class="row"><a class="link" title="Vuelos Bariloche" href="http://www.despegar.com.ar/pasajes/vuelos-a-bariloche-desde-buenos+aires-bue-brc">Vuelos a Bariloche</a><span> - </span></li><li class="row"><a class="link" title="Lineas Aereas" href="http://www.despegar.com.ar/aerolineas/lineas-aereas.html">Líneas Aéreas</a><span> - </span></li><li class="row"><a class="link" title="Air Europa" href="http://www.despegar.com.ar/aerolineas/air-europa.html">Air Europa</a><span> - </span></li><li class="row"><a class="link" title="Iberia Airlines" href="http://www.despegar.com.ar/aerolineas/iberia.html">Iberia</a><span> - </span></li><li class="row"><a class="link" title="Air France airlines" href="http://www.despegar.com.ar/aerolineas/air-france.html">Air France</a><span> - </span></li><li class="row"><a class="link" title="Hoteles Punta" href="http://www.despegar.com.ar/hoteles/hl-pdp-i1/hoteles-en-punta-del-este">Hoteles Punta del Este</a><span> - </span></li><li class="row"><a class="link" title="Pluna lineas aéreas" href="http://www.despegar.com.ar/aerolineas/pluna.html">Pluna</a><span> - </span></li><li class="row"><a class="link" title="Hoteles baratos" href="http://www.despegar.com.ar/hoteles/">Hoteles</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Mendoza" href="http://www.despegar.com.ar/hoteles/hl-mdz-i1/hoteles-en-mendoza">Hoteles Mendoza</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Córdoba" href="http://www.despegar.com.ar/hoteles/hl-cor-i1/hoteles-en-cordoba">Hoteles Córdoba</a><span> - </span></li><li class="row"><a class="link" title="Vuelos " href="http://www.despegar.com.ar/vuelos-en-oferta-desde-buenos-aires.html">Vuelos baratos</a><span> - </span></li><li class="row"><a class="link" title="Vuelos Alitalia" href="http://www.despegar.com.ar/aerolineas/alitalia.html">Alitalia</a><span> - </span></li><li class="row"><a class="link" title="Vuelos a Barcelona" href="http://www.despegar.com.ar/pasajes/vuelos-a-barcelona-desde-buenos+aires-bue-bcn">Vuelos Barcelona</a><span> - </span></li><li class="row"><a class="link" title="Vuelos a Florianópolis" href="http://www.despegar.com.ar/pasajes/vuelos-a-florianopolis-desde-buenos+aires-bue-fln">Vuelos Florianópolis</a><span> - </span></li><li class="row"><a class="link" title="Copa" href="http://www.despegar.com.ar/aerolineas/copa-airlines.html">Copa Airlines</a><span> - </span></li><li class="row"><a class="link" title="Vuelos a New York" href="http://www.despegar.com.ar/pasajes/vuelos-a-nueva+york-desde-buenos+aires-bue-nyc">Vuelos New York</a><span> - </span></li><li class="row"><a class="link" title="Vuelos a París" href="http://www.despegar.com.ar/pasajes/vuelos-a-paris-desde-buenos+aires-bue-par">Vuelos París</a><span> - </span></li><li class="row"><a class="link" title="Vuelos a Río de Janeiro" href="http://www.despegar.com.ar/pasajes/vuelos-a-rio+de+janeiro-desde-buenos+aires-bue-rio">Vuelos Río de Janeiro</a><span> - </span></li><li class="row"><a class="link" title="Turismo en Miami" href="http://www.despegar.com.ar/turismo/mia/miami-estados+unidos+usa">Turismo Miami</a><span> - </span></li><li class="row"><a class="link" title="Turismo en Disney" href="http://www.despegar.com.ar/turismo/orl/orlando-estados+unidos+usa">Turismo Disney</a><span> - </span></li><li class="row"><a class="link" title="American" href="http://www.despegar.com.ar/aerolineas/american-airlines.html">American Airlines</a><span> - </span></li><li class="row"><a class="link" title="Turismo en Mar del Plata" href="http://www.despegar.com.ar/turismo/mdq/mar+del+plata-argentina">Turismo Mar del Plata</a><span> - </span></li><li class="row"><a class="link" title="Turismo en New York" href="http://www.despegar.com.ar/turismo/nyc/nueva+york+new+york-estados+unidos+usa">Turismo New York</a><span> - </span></li><li class="row"><a class="link" title="Vuelos en Madrid" href="http://www.despegar.com.ar/pasajes/vuelos-a-madrid-desde-buenos+aires-bue-mad">Vuelos Madrid</a><span> - </span></li><li class="row"><a class="link" title="Vuelos en Londres" href="http://www.despegar.com.ar/pasajes/vuelos-a-londres-desde-buenos+aires-bue-lon">Vuelos Londres</a><span> - </span></li><li class="row"><a class="link" title="Vuelos en Roma" href="http://www.despegar.com.ar/pasajes/vuelos-a-roma-desde-buenos+aires-bue-rom">Vuelos Roma</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Roma" href="http://www.despegar.com.ar/hoteles/hl-rom-i1/hoteles-en-roma">Hoteles Roma</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Madrid" href="http://www.despegar.com.ar/hoteles/hl-mad-i1/hoteles-en-madrid">Hoteles Madrid</a><span> - </span></li><li class="row"><a class="link" title="Hoteles en Londres" href="http://www.despegar.com.ar/hoteles/hl-lon-i1/hoteles-en-londres">Hoteles Londres</a><span> - </span></li><li class="row"><a class="link" title="Vuelos Austral" href="http://www.despegar.com.ar/aerolineas/austral.html">Austral</a><span> - </span></li><li class="row"><a class="link" title="Lufthansa Airlines" href="http://www.despegar.com.ar/aerolineas/lufthansa.html">Lufthansa</a></li></ul>
+			
+	        <div class="shareAndSecureContainer">
+	            <div class="shareLinksContainer">
+	            
+	            </div>
+                <div id="secureFooter" class="secureFooter ">
+		            
+		            <div title="Certificado por Iata" id="iataFooter" class="iataFooter mainSprite brandIataLarge"></div>
+		            <div title="VeriSign Secured" id="verisign1Footer" class="verisignFooter mainSprite brandVeriSignSecuredLarge" onclick="javascript:window.open('https://seal.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=WWW.DESPEGAR.COM&amp;lang=en')"></div>
+		            <div title="VeriSign Secured" id="verisign2Footer" class="verisignFooter mainSprite brandCertiSurLarge" onclick="javascript:window.open('https://seal.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=WWW.DESPEGAR.COM&amp;lang=en')"></div>		        
+    	            			 
+		        </div>	
+		    </div>
+		    		
+				<ul id="col4">
+			    <li class="row rowTitle">Despegar en el mundo</li>
+			    <li class="columnCountries">
+			        <span class="pais"><span id="Span2" class="flag mainSprite littleFlagArgentina"></span><a class="link" href="http://www.despegar.com.ar">Argentina</a></span>
+			        <span class="pais"><span id="Span11" class="flag mainSprite littleFlagBolivia"></span><a class="link" href="http://www.despegar.com.bo">Bolivia</a></span>
+			        <span class="pais"><span id="Span39" class="flag mainSprite littleFlagBrasil"></span><a class="link" href="http://www.decolar.com">Brasil</a></span>
+			        <span class="pais"><span id="Span6" class="flag mainSprite littleFlagChile"></span><a class="link" href="http://www.despegar.cl">Chile</a></span>
+			    </li>
+			    <li class="columnCountries">
+			        <span class="pais"><span id="Span34" class="flag mainSprite littleFlagColombia"></span><a class="link" href="http://www.despegar.com.co">Colombia</a></span>
+			        <span class="pais"><span id="Span5" class="flag mainSprite littleFlagCostaRica"></span><a class="link" href="http://www.despegar.co.cr">Costa Rica</a></span>
+			        <span class="pais"><span id="Span10" class="flag mainSprite littleFlagEcuador"></span><a class="link" href="http://www.despegar.com.ec">Ecuador</a></span>			        
+			        <span class="pais"><span id="Span38" class="flag mainSprite littleFlagElSalvador"></span><a class="link" href="http://www.despegar.com.sv">El Salvador</a></span>
+			    </li>
+			    <li class="columnCountries">
+			        <span class="pais"><span id="Span1" class="flag mainSprite littleFlagGuatemala"></span><a class="link" href="http://www.despegar.com.gt">Guatemala</a></span>
+			        <span class="pais"><span id="Span4" class="flag mainSprite littleFlagHonduras"></span><a class="link" href="http://www.despegar.hn">Honduras</a></span>
+			        <span class="pais"><span id="Span9" class="flag mainSprite littleFlagMexico"></span><a class="link" href="http://www.despegar.com.mx">México</a></span>
+			        <span class="pais"><span id="Span37" class="flag mainSprite littleFlagNicaragua"></span><a class="link" href="http://www.despegar.com.ni">Nicaragua</a></span>
+			    </li>
+			    <li class="columnCountries">
+			        <span class="pais"><span id="Span8" class="flag mainSprite littleFlagPanama"></span><a class="link" href="http://www.despegar.com.pa">Panamá</a></span>
+			        <span class="pais"><span id="Span32" class="flag mainSprite littleFlagParaguay"></span><a class="link" href="http://www.despegar.com.py">Paraguay</a></span>
+			        <span class="pais"><span id="Span3" class="flag mainSprite littleFlagPeru"></span><a class="link" href="http://www.despegar.com.pe">Perú</a></span>
+			        <span class="pais"><span id="Span31" class="flag mainSprite littleFlagPuertoRico"></span><a class="link" href="http://www.despegar.com.pr">Puerto Rico</a></span>
+			    </li>
+			    <li class="columnCountries">
+			        <span class="pais"><span id="Span36" class="flag mainSprite littleFlagRepDominicana"></span><a class="link" href="http://www.despegar.com.do">Rep. Dominicana</a></span>
+			        <span class="pais"><span id="Span7" class="flag mainSprite littleFlagUruguay"></span><a class="link" href="http://www.uy.despegar.com">Uruguay</a></span>
+			        <span class="pais"><span id="Span35" class="flag mainSprite littleFlagUSA"></span><a class="link" href="http://www.us.despegar.com">Estados Unidos </a></span>
+			        <span class="pais"><span id="Span40" class="flag mainSprite littleFlagVenezuela"></span><a class="link" href="http://www.despegar.com.ve">Venezuela</a></span>
+			    </li>			
+			</ul>		
+			<div class="logosBrandFooter">
+			    <span class="rowTitle">Opiniones provistas por: </span>
+			    <span class="logoBrand mainSprite tripAdvisorLogoEntero"></span>
+			    <span class="logoBrand mainSprite viajerosLogo"></span>
+			    <span class="logoBrand mainSprite preViajeLogo"></span>
+			    <span class="logoBrand mainSprite ciudadesLogo"></span>
+			</div>
+            <div id="parrafContainer">
+			    
+			</div>
+			
+			<p class="parraf">
+				1999-2011,
+				<span class="fakeLink" onclick="javascript:window.open('http://www.despegar.com/vuelos.html')">Despegar.com, Inc</span>
+				. Todos los derechos reservados.
+				<br/>
+				LEGAJO N° 10680 - Disp. 0599/2000. 4 lugares disponibles por producto. Vigencia desde el 16/11/2011 al 18/11/2011.-
+				<br/>
+				Dirección General de Defensa y Protección al Consumidor - Consultas y/o denuncias - Click
+				<span class="fakeLink" onclick="javascript:window.open('http://www.buenosaires.gov.ar/areas/produccion/def_consumidor/denuncia.php?menu_id=2531')">Aquí</span>.
+			</p>
+			<p id="leyendaLegal" class="parraf leyendaLegal">
+				El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley Nº 25.326". "La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Organo de Control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al incumplimiento de las normas sobre protección de datos personales.
+			</p>
+		</div>
+	</div>												
+
+<script language="javascript" type="text/javascript">
+    var options = {	
+        col:
+        [
+            {
+                ul: $("#col1"),
+                li:
+                [
+                    {
+                        className: "row",
+                        a:
+                        {
+	                        className: "link",
+	                        title: "",
+	                        target: "_blank",
+	                        href: "http://www.despegar.com.ar/Contactenos",
+	                        text: "Contáctenos"
+                        }
+                    },		
+                    {	
+                        className: "row",
+                        a:
+                        {
+	                        className: "link",
+	                        title: "",
+	                        target: "_blank",
+	                        href: "http://www.viajeros.com",
+	                        text: "Viajeros.com"
+                        }
+                    },
+                    {	
+                        className: "row",
+                        a:
+                        {
+	                        className: "link",
+	                        title: "Busque sugerencias, mapa, clima y moneda local de cualquier ciudad",
+	                        target: "_blank",
+	                        href: "http://www.despegar.com.ar/Contents/Tools",
+	                        text: "Información sobre destinos"
+                        }
+                    }
+                ]
+            },
+            {
+                ul: $("#col2"),
+                li:
+                [
+                    {	
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.com.ar/Contents/Security/Confidentiality.aspx",
+		                    text: "Política de privacidad"
+	                    }
+                    },		
+                    {	
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.com.ar/Contents/BetterPrice/TermsAndConditions",
+		                    text: "Mejor precio garantizado"
+	                    }
+                		
+                    },
+                    {	
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.com.ar/Contents/Security/SafeBuy.aspx",
+		                    text: "Compra segura"
+	                    }
+                		
+                    },		
+                    {	
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.com.ar/Contents/Affiliates/Program/programa-de-afiliados",
+		                    text: "Programa de afiliados"
+	                    }
+                		
+                    },
+                    {
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.com/advertising/dtravelnetwork/index.html",
+		                    text: "Anuncie en Despegar.com"
+	                    }				
+                    },
+                    {
+	                    className: "row",
+	                    a:
+	                    {
+		                    className: "link",
+		                    title: "",
+		                    target: "_blank",
+		                    href: "http://www.despegar.bumeran.com.ar/aplicantes/",
+		                    text: "Empleos"
+	                    }				
+                    }
+                ]
+            }
+        ]
+    };
+    
+    var footer = new Common.FooterCreator();
+    footer.create(options);
+    				
+</script>	
+
+<script language="javascript" type="text/javascript">
+    //Inicializa la caja de links sociales
+    $(".shareLinksContainer").iconcallpopup({
+        items: [
+					{
+					    iconClass: "newsletterIcon",
+					    containerIcon: "iconContainerNewsletter",
+					    objRelatedClass: "sharenewsletter"
+					},
+					{
+					    iconClass: "sendMailIcon",
+					    containerIcon: "iconContainerSendMail",
+					    objRelatedClass: "sendmail"
+					},
+					{
+					    iconClass: "twitterIcon",
+					    containerIcon: "iconContainerTwitter",
+					    objRelatedClass: "twitter"
+					},
+					{
+					    iconClass: "facebookIcon",
+					    containerIcon: "iconContainerFacebook",
+					    objRelatedClass: "facebook"
+					},
+					{
+					    iconClass: "orkutIcon",
+					    containerIcon: "iconContainerOrkut",
+					    objRelatedClass: "orkut"
+					}
+				],
+        language: "es"
+    });
+
+
+</script>	
+<!-- popUp precio garantizado -->
+<div class="popUp BestWar BestWarPop" id="BestPriceWarPop" style="display: none">
+    <div class="contenedorPopUp">
+        <div class="esquina arribaIzq">
+        </div>
+        <div class="arribaMedio">
+        </div>
+        <div class="esquina arribaDer">
+        </div>
+        <div class="contenedorFondoDer">
+            <div class="contenedorFondoIzq">
+                <div class="contenedorBordes">
+                    <div class="contenidoDelPopUp">
+                        <div class="tituloPopup">
+                            <strong class="BestWarTitle">
+                                Despegar.com: La agencia Nº 1 en precio</strong>
+                            <div class="BestWarClosePop closeWindow mainSprite" onclick="(($.browser.msie && ($.browser.version < '8')) ? $('#BestPriceWarPop').hide() : $('#BestPriceWarPop').fadeOut());">
+                            </div>
+                        </div>
+                        <p>
+                            Trabajamos todos los días para ayudarle a economizar tiempo y dinero en sus compras de viaje. Queremos que tenga la tranquilidad que cada vez que compra en Despegar.com está accediendo a las mejores tarifas disponibles. Por ello ahora le garantizamos que en Despegar.com usted encontrará las mejores tarifas en vuelos y hoteles, en el caso de que usted encontrase una mejor tarifa le daremos la diferencia hasta un máximo de USD 100, como crédito en una futura compra en nuestro sitio.
+                        </p>
+                        <p>
+                            <a href="http://www.despegar.com.ar/Contents/BetterPrice/TermsAndConditions" target="_blank">Garantía de mejor precio</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- izq  -->
+        </div>
+        <!-- der  -->
+        <div class="abajoMedio">
+        </div>
+        <div class="esquina abajoIzq">
+        </div>
+        <div class="esquina abajoDer">
+        </div>
+    </div>
+    <!-- Fin del Pop-up -->
+</div>
+<!-- fin popUp precio garantizado -->
+
+<!-- popUp servicio -->
+<div class="popUp" id="BestServicePop" style="display: none">
+    <div class="contenedorPopUp">
+        <div class="esquina arribaIzq">
+        </div>
+        <div class="arribaMedio">
+        </div>
+        <div class="esquina arribaDer">
+        </div>
+        <div class="contenedorFondoDer">
+            <div class="contenedorFondoIzq">
+                <div class="contenedorBordes">
+                    <div class="contenidoDelPopUp">
+                        <div class="tituloPopup">
+                            <strong class="BestWarTitle">
+                                Despegar: La agencia Nº 1 en servicio</strong>
+                            <div class="BestWarClosePop closeWindow mainSprite" onclick="(($.browser.msie && ($.browser.version < '8')) ? $('#BestServicePop').hide() : $('#BestServicePop').fadeOut());">
+                            </div>
+                        </div>
+                        <p>
+                            Su satisfacción es nuestra prioridad. Desde hace más de 10 años trabajamos para que comprar su vuelo y hotel sea rápido, simple y sin sorpresas. Súmese hoy a los 3 millones de pasajeros que ya compraron en nuestro sitio y descubra porque el 93% está satisfecho de haberse animado a comprar en Despegar.com.
+                        </p>
+                        <p>
+                            <a href="http://www.despegar.com.ar/Contents/HappyClients" target="_blank">Ver opiniones de clientes</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- izq  -->
+        </div>
+        <!-- der  -->
+        <div class="abajoMedio">
+        </div>
+        <div class="esquina abajoIzq">
+        </div>
+        <div class="esquina abajoDer">
+        </div>
+    </div>
+    <!-- Fin del Pop-up -->
+</div>
+<!-- fin popUp servicio --><img src='/logger.asp?pagina=/search/flights/RoundTrip/BUE/PAR/2012-01-02/2012-03-22/1/0/0&dominio=www.despegar.com.ar&vpais=1&start=11/17/2011 17:15:41&end=11/17/2011 17:15:41&clientIP=10.2.10.3&sPaginaBuscador=http://www.despegar.com.ar/search/flights/oneWay/BUE/PAR/2012-01-02/1/0/0&Misc=' border=0 width=1 height=1><!-- SiteCatalyst code version: H.22.1.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script type="text/javascript" src="/js/custom/omniture/s_code.js"></script>
+<script type="text/javascript">//<![CDATA[
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+var existOmnitureDataColletor = false;
+try {
+    existOmnitureDataColletor = omnitureDataCollector.isAviable();
+}
+catch (e) { /*Do nothing*/ }
+if (existOmnitureDataColletor) {
+    omnitureDataCollector.beforeApply(s);
+    s = omnitureDataCollector.applyData(s);
+    omnitureDataCollector.afterApply(s);
+}
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+s.t()//]]></script>
+<!-- End SiteCatalyst code version: H.22.1. -->
+<!-- Google Code for Remarketing List -->
+<script type="text/javascript"> 
+/* <![CDATA[ */ 
+var google_conversion_id = 1043157944; 
+var google_conversion_language = "en"; 
+var google_conversion_format = "3"; 
+var google_conversion_color = "666666"; 
+var google_conversion_label = "j28ICNj65AEQuKe18QM";
+var google_conversion_value = 0; 
+/* ]]> */ 
+</script> 
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"> 
+</script> 
+<noscript> 
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1043157944/?label=j28ICNj65AEQuKe18QM&guid=ON&script=0"/> 
+</div>
+</noscript></body>
+</html>
