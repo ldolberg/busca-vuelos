@@ -33,7 +33,7 @@ Buenos Aires
 #Ingrese Aeropuerto Destino
 Tokyo
 http://www.despegar.com.ar/Flights.Services/Flights/Flights.svc/ClusteredFlights/BUE/TYO/2011-12-30/2012-09-02/1/0/0
-global name 'localdir' is not defined
+
 0.00 % completo
 Out[12]: 
 [({'arrivando': '02/09/2012',
