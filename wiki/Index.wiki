@@ -1,0 +1,78 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Busca Vuelos is small script for batch mode flight searching.
+It supports resuming previous searches and implements exponential backoff in order to avoid being banned by the gateway.
+Only works with despegar.com.ar
+Interactive mode is recommended however it can be used from a batch console.
+
+Prices are always in us dollars. Airport Code must be IATA Code.
+
+= Install =
+
+Download the source code from [http://code.google.com/p/busca-vuelos/downloads/list here] 
+
+Extract the source code 
+
+= Examples =
+first launch ipython
+
+== Interactive Mode ==
+<code>
+In [11]: import busca_vuelo
+In [12]: busca_vuelo.get_flights()
+#Fecha de Partida( en formato YYYYMMDD)
+20111229
+#Fecha de Vuelta( en formato YYYYMMDD)
+20120902
+#Ingrese Aeropuerto Origen
+Buenos Aires
+#Ingrese Aeropuerto Destino
+Tokyo
+http://www.despegar.com.ar/Flights.Services/Flights/Flights.svc/ClusteredFlights/BUE/TYO/2011-12-30/2012-09-02/1/0/0
+global name 'localdir' is not defined
+0.00 % completo
+Out[12]: 
+[({'arrivando': '02/09/2012',
+   'compania': [u'Alitalia'],
+   'dest': u'Tokyo',
+   'escalas': 2,
+   'numero': [u'681', u'784'],
+   'precio': 2807,
+   'saliendo': '30/12/2011'},
+  {'arrivando': '02/09/2012',
+   'compania': [u'Alitalia'],
+   'dest': u'Tokyo',
+   'escalas': 2,
+   'numero': [u'681', u'784'],
+   'precio': 2807,
+   'saliendo': '30/12/2011'})]
+</code>
+
+== Using Time Deltas ==
+Use a time delta to look for the cheapest flight within a time interval
+
+=== substracting delta days to the return date ===
+<code>
+import busca_vuelo
+#airport codes must be iata codes
+kwargs = {"source":"BUE","destination":"FRA","delta_dt_vuelta":12,"silent":True}
+vuelos = busca_vuelo.get_flights(**kwargs)
+#Prompt for dates
+Fecha de Partida( en formato YYYYMMDD)
+20111228
+Fecha de Vuelta( en formato YYYYMMDD)
+20120530
+
+for r in sorted(vuelos,key=lambda x: x[0]["precio"])[0:5]:
+	v = r[0]
+	print "%s %s USD a %s el %s en %s escalas volviendo %s" % ("-".join(v["compania"]),v["precio"], v["dest"], v["saliendo"],v["escalas"]-1,v["arrivando"])
+</code>
+Outputs the top 5 cheapest flights
+
+Lufthansa 1323 USD a Frankfurt el 28/12/2011 en 0 escalas volviendo 29/05/2012
+Lufthansa 1323 USD a Frankfurt el 28/12/2011 en 0 escalas volviendo 22/05/2012
+Lufthansa 1372 USD a Frankfurt el 28/12/2011 en 0 escalas volviendo 30/05/2012
+Lufthansa 1372 USD a Frankfurt el 28/12/2011 en 0 escalas volviendo 28/05/2012
+Lufthansa 1372 USD a Frankfurt el 28/12/2011 en 0 escalas volviendo 25/05/2012
