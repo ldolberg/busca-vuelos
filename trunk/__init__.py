@@ -108,7 +108,7 @@ def get_flights(**kwargs):
 	ebackoff = kwargs.get("backoff",False)
 
 	actual = 0
-	total = delta_dt_vuelta * len(ae_des) * delta_dt_ida
+	total = delta_dt_vuelta *  delta_dt_ida * (len(ae_dest) if type(ae_dest) == list else 1)
 	vuelos = []	
 
 	dt_vuelta = dt_vuelta if dt_vuelta != None else dt_ida + datetime.timedelta(delta_dt_vuelta)
